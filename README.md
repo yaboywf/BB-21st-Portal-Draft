@@ -1,6 +1,6 @@
 # BB 21st Portal Draft
 
-DISCLAIMER: This is only a draft of the original portal. This is therefore <strong>NOT</strong> official, and by no means a replacement to the original BB 21<sup>st</sup> Portal. The original Portal Can be found here: https://bb-21-5a1d0159cf81.herokuapp.com/
+<b>DISCLAIMER:</b> This is only a draft of the original portal. This is therefore <b>NOT</b> official, and by no means a replacement to the original BB 21<sup>st</sup> Portal. The original portal can be found here: https://bb-21-5a1d0159cf81.herokuapp.com/
 
 ## What is it ?
 This website helps to facilitate administrative tasks such as creating 32A results, user management and awards tracking.
