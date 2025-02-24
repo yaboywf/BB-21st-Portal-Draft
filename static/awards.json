@@ -1,0 +1,258 @@
+{
+    "Target": {
+        "description": "All lessons should be completed by the end of Recuit Camp.",
+        "link": "https://bbsp.notion.site/Target-0b8441e5e928448895c3ca86ce8d58f9",
+        "recommendation": "Sec 1"
+    },
+
+    "Christian Education": {
+        "description": "This should be completed so long as Boys have attended total of 24 parades with CE sessions. Usually submitted at the end of Secondary 3.",
+        "link": "https://bbsp.notion.site/Christian-Education-3eb5fa743a66430db3d4e484b5aec0a5",
+        "recommendation": "Sec 3"
+    },
+
+    "Total Defence": {
+        "level": {
+            "Bronze": {
+                "description": "Boys need to complete SLS for TD Bronze, learn how to play GOTC II and submit an action card. This should be completed by the Sec 1 platoon in conjunction with the Sec 2 platoon for TD Silver.",
+                "recommendation": "Sec 1"
+            },
+
+            "Silver": {
+                "description": "Boys need to conduct GOTC II gameplay with reflection and submit a storyboard for N.E.mation!. This should be completed by the Sec 2 platoon in conjunction with the Sec 1 platoon for TD Bronze.",
+                "recommendation": "Sec 2"
+            },
+
+            "Gold": {
+                "description": "Not necessary for core awards, should only be done if Boys want to during their Sec 3 year.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Total-Defence-ee3fb419fb634461a8c394084cb0f872"
+    },
+
+    "Community Spiritedness": {
+        "level": {
+            "Basic": {
+                "description": "Complete 3 CS Lessons, participate in a stakeholder engagement event (Boys parents, through REC Camp/Enrolment Service engagement with parents). Complete 15 hours of service through BB Cares and BB SGB.<br><br>It is important to note that engaging Boys parents through REC Camp/Enrolment Service is essential for all Sec 1s to complete CS Basic. Else Boys would have difficulty engaging parents for CS Advanced or Master.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Complete 3 CS Lessons, help out in a stakeholder engagement event (School / Church). Complete 15 hours of service through BB Cares and BB SGB.<br><br>Boys must provide assistance or manpower during the event and not simply participate. This should be done in conjunction with the Sec 3 Platoon who are planning the stakeholder engagement for CS Master.",
+                "recommendation": "Sec 2"
+            },
+
+            "Master": {
+                "description": "Complete 3 CS Lessons, plan and execute a stakeholder engagement event (School / Church whichever was not engaged last year). Attend FAA duty.<br><br>Boys must plan and execute this event. This plan should include the Sec 2 Platoon who will assist in the event for CS Advanced. It is important to note that this stage of CS is only necessary for Founders award applicants. Therefore the planning for this event can be used as an initial assessment for Founders award, it is not necessary to pass all Sec 3s.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Community-Spiritedness-63192ecb0b2c441dad6ac8b2c1d9fbf7"
+    },
+
+    "Global Awareness": {
+        "level": {
+            "Basic": {
+                "description": "Attend lessons to be introduced to 2 of 13 global issues. Can be completed in 1-2 parades.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Attend 3 Keystone lessons. Perform guided research and write-up/presentation on 1 of 13 global issues. This will take a long time for the Boys to work on their projects. Brief the Boys as early as possible and perform regular check ins while doing other badgeworks.<br><br>Preferably completed by the first half of the year since the second half will be dedicated to adventure training.",
+                "recommendation": "Sec 2"
+            },
+
+            "Master": {
+                "description": "Boys must complete a Social Entrepreneurship Project with action plans to solve problems of a chosen topic (from the list of 13 issues). The project’s topic and chosen country/community of interest should be of a global (not Singapore) setting. The project is to be submitted to BBHQ through 32A, submit the presentation as the results for the 32A.<br><br>This stage is only required for Founders award. There is no need to force Boys who are unwilling to complete it unless we are trying to push them for Founders.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Global-Awareness-d44a9995884e49f79f16a7b8606b12b2"
+    },
+
+    "Leadership": {
+        "level": {
+            "Basic": {
+                "description": "Attend the first 6 lessons of the leadership course. The slides are provided, but we should adjust the lessons as necessary since the slides provided for this course can be hard to understand. This can be cleared with Advanced in Sec 2. The lessons can and should be started before LDC itself to free up more time during LDC to work on other hands on leadership training.",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Attend the next 6 lessons of the leadership course. This is similar to Basic. This should be cleared by the end of LDC Camp. The lessons can and should be started before LDC itself to free up more time during LDC to work on other hands on leadership training.",
+                "recommendation": "Sec 2"
+            },
+
+            "Master": {
+                "description": "Pass National Leadership Camp (NLC) This stage is only required for Founders award. We should only register Boys who we are pushing for Founders / likely to pass.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Leadership-832af9b9cc0e474b96e96bddaf00d0d8"
+    },
+
+    "Adventure": {
+        "level": {
+            "Basic": {
+                "description": "Attend the first 5 theory lessons and demonstrate competency. Complete a 10km expedition on foot. While tent pitching is technically not required for Basic, it is essential for the Boys to gain experience here so that they can pass Advanced in Sec 2. It also facilitates the learning process, since Sec 2 Boys who are already familiar can help to teach the Sec 1s while improving on their own under the Sec 3s supervision. This also means that we can combine the training for both Sec 1 and 2 platoons for Adventure.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Attend the next 5 theory lessons and demonstrate competency. Complete a 16km expedition on foot. We can combine the training for both Sec 1 and 2 platoons for Adventure, the Sec 2s can be tested on their revision through facilitating lessons for Sec 1s under supervision. This stage of the award, while commonly completed within this company is not a requirement for any core awards.<br><br>It is only helpful to grant 2 PM points to hit requirements for SPA or Founders (4 and 6 points respectively). Therefore Boys who find it hard to pass Adventure Advanced can find elective badges to make up for this to still attain their SPA.",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Drill": {
+        "level": {
+            "Basic": {
+                "description": "Complete the first 10 drill lessons and pass a drill assessment which should consist of uniform inspection. This should preferably be completed before Adventure lessons start.",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Complete the next 10 drill lessons and pass a drill assessment which includes the newly taught drill movements. This stage is not essential for any core awards and only provides 2 PM points.<br><br>It is unlikely for us to complete this since we do not even have drill instructors familiar with some of these drills.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Arts & Crafts": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who have participated in an Arts or Crafts activity where a minimum of 7 hours of practical work is required.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who have attained the Basic Arts & Crafts award and have participated in an Arts or Crafts activity where a minimum of an additional 12 hours of practical work is required.",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Athletics": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 2 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who attain a minimum of Level 1 in any two of the events mentioned in the table below.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 2 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who have attained the Basic Athletics award and attained Level 2 in any two of the events mentioned in the table below.",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "First Aid": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate reflection and guidance in one pre-course and one post-course Character Excellence lesson. The list of pre-approved first aid courses is available in the Annex of this document (page 7). Awarded to Boys who:<ol><li>Attend a 2-day first aid course lasting about 15 hours; and</li><li>Pass with certification the necessary theory and practical assessments administered by the vendor.</li></ol>",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate reflection and guidance in one pre-course and one post-course Character Excellence lesson. The list of pre-approved first aid courses is available in the Annex of this document (page 7). Awarded to Boys who (either 1. or 2.):<ol><li>Attend a 2-day first aid course that includes AED (automated external defibrillator) component, lasting about 15 hours; or</li><li>Have attained the Basic First Aid award and attend the 4-hour CPR+AED course funded by Temasek Foundation as part of the Total Defence programme and</li></ol><p>Pass with certification the necessary theory and practical assessments administered by the vendor and</p><p>Perform 8 hours of First Aid duty in the school or community, after completion of first 2 requirements.</p><p>",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Hobbies": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson. Awarded to Boys who have participated in a Hobbies activity over a period of at least 3 months, with a minimum of 7 hours of practical work required. Boys may carry out work on an individual or group basis. Boys must comply with the following: <ol><li>Submit work at regular intervals when required for inspection.</li><li>Keep a logbook of time spent and work done.</li><li>Present the end result for assessment by someone knowledgeable.</li></ol><p>List of suggested subjects:</p><ul><li>Collection-Related</li><li>Do-It-Yourself-Related</li><li>Activity Related.</li><ul>",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson. Awarded to Boys who have attained the Basic Hobbies award and have participated in a Hobbies activity over a period of at least an additional 3 months, with a minimum of an additional 12 hours of practical work required. Boys may carry out work on an individual or group basis. Boys must comply with the following:<ol><li>Submit work at regular intervals when required for inspection.</li><li>Keep a logbook of time spent and work done.</li><li>Present the end result for assessment by someone knowledgeable.</li></ol><p>List of suggested subjects:</p><ul><li>Collection-Related</li><li>Do-It-Yourself-Related</li><li>Activity Related.</li></ul>",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Musketry": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate reflection and guidance in one pre-course and one post-course Character Excellence lesson. Due to the nature of this activity, it is imperative that all sessions are conducted by trained Rifle Instructors who are recognised by the Ministry of Education.<br><br>This is to ensure proper use of weapons and overall safety of the participants and conducting Officers/instructors. Boys should concentrate on the mastery of any one weapon for the purpose of attaining their Musketry Award.<br><br>An assessment should be conducted by the instructor at the end of the course with the following criteria:<ul><li>Air-Rifle or Air Pistol: Grouping size of 6 out of 10 shots within 1-ring.</li><li>Clay Target Shooting: 20 shots on straight away targets, 4 hits to pass.</li></ul>",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate reflection and guidance in one pre-course and one post-course Character Excellence lesson. Due to the nature of this activity, it is imperative that all sessions are conducted by trained Rifle Instructors who are recognised by the Ministry of Education.<br><br>This is to ensure proper use of weapons and overall safety of the participants and conducting Officers/instructors. Boys should concentrate on the mastery of any one weapon for the purpose of attaining their Musketry Award.<br><br>An assessment should be conducted by the instructor at the end of the course with the following criteria:<ul><li>Air-Rifle or Air Pistol: 30 shots competition, 150 points to pass.</li><li>Clay Target Shooting: 20 shots on away straight targets, 6 hits to pass.</li></ul>",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Sportsman": {
+        "level": {
+            "Basic": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who have learnt one team sport in at least 4 lessons.",
+                "recommendation": "Sec 1"
+            },
+
+            "Advanced": {
+                "description": "Officers are to facilitate the learning of the badgework and reflection in 4 lessons for each level, inclusive of a Character Excellence value per lesson.<br><br>Awarded to Boys who have attained the Basic Sportsman award, learnt one other team sport in 4 lessons, and have competed in one other intra-Company competition or one inter-Company competition.",
+                "recommendation": "Sec 2"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Kayaking": {
+        "level": {
+            "Basic": {
+                "description": "Attained Singapore Canoe Federation's Kayaking 1 Star Personal Skill award.",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Attained Singapore Canoe Federation's Kayaking 2 Star Personal Skill award.",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Sailing": {
+        "level": {
+            "Basic": {
+                "description": "Participated in the DBS Sailing At The Bay programme.<ul><li>40-50 min session on a weekend afternoon.</li><li>Aimed at providing more opportunities for everyone to try sailing and enliven the Marina Bay area. These sailing activities are free and open to the public.</li><li>Session bookings are opened one month before (i.e. the following month's registration will open on the 3rd Monday of every month at 12 noon).</li></ul>",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Attained SSF Dinghy Proficiency Level 1 Certification OR completed one of the following sailing courses:<ul><li>SAF Yacht Club's Get Kids Afloat Programme (4-day course for ages 7 to 15)</li><li>RSYC Basic Sailing Course (Optimist Junior) (4-day course for ages 7 to 13)</li><li>RSYC Basic Sailing Course (Adult Dinghy) (3-day course for ages 14 and up)</li><li>CSC Optimist Introductory Sailing Course (4-day course for ages 7 to 13)</li><li>CSC Adult Dinghy Sailing Course (4-day course for ages 14 and up).</li></ul>",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    },
+
+    "Swimming": {
+        "level": {
+            "Basic": {
+                "description": "Attained at least Swimsafer Bronze (Stage 4).",
+                "recommendation": "Sec 2"
+            },
+
+            "Advanced": {
+                "description": "Attained at least Swimsafer Gold (Level 6).",
+                "recommendation": "Sec 3"
+            }
+        },
+        "link": "https://bbsp.notion.site/Personal-Mastery-e8a79eb739934efabf2b0d1481a5f6ae"
+    }
+}

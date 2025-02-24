@@ -1,0 +1,283 @@
+@page {
+    size: A4 landscape;
+    margin: 20mm;
+}
+
+@media print {
+    @page { size: A4 landscape; margin: 0; }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    visibility: visible !important;
+}
+
+p {
+    font-size: 14px;
+}
+
+html {
+    display: flex;
+    background: #f6f6f6;
+    width: 297mm !important;
+    height: 210mm !important;
+}
+
+body {
+    padding: 20px 40px;
+    border: 1px solid black;
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;   
+}
+
+header section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+header img {
+    width: 60px;
+    margin-right: 5px;
+}
+
+header > div {
+    display: flex;
+    flex-direction: column;
+}
+
+sup {
+    font-size: 6px;
+}
+
+header p {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+header p:last-of-type {
+    font-weight: normal;
+}
+
+header span {
+    font-size: 9px;
+    display: block;
+    text-align: end;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.title > h1 {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.title > h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.details {
+    display: grid;
+    gap: 2px 50px;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.details > div {
+    display: flex;
+    gap: 5px;
+}
+
+.details span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.roles {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    column-gap: 15px;
+}
+
+.roles span {
+    font-size: 14px;
+}
+
+.roles div {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 5px;
+}
+
+.roles div:first-of-type {
+    border-right: 1px solid black;
+}
+
+.roles div p {
+    text-align: end;
+    font-weight: bold;
+}
+
+ol li::before {
+    content: counter(list-counter) ") ";
+    margin-right: 10px;
+}
+
+ol li {
+    counter-increment: list-counter;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+    counter-reset: list-counter1;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: counter(list-counter1, lower-alpha) ") ";
+}
+
+ul li {
+    counter-increment: list-counter1;
+    position: relative;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+ol {
+    list-style: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+}
+
+.company_announcements {
+    margin-top: 5px;
+}
+
+.company_announcements h2 {
+    font-size: 14px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 !important;
+}
+
+footer {
+    border-top: 1px solid lightgrey;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    padding-top: 5px;
+    margin: 0;
+    background: transparent !important;
+    align-items: center;
+}
+
+footer p {
+    font-size: 12px;
+    color: black !important;
+}
+
+.programs_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    width: 100%;
+    row-gap: 30px;
+}
+
+.programs {
+    width: calc(100% / 2);
+    border-top: 1px solid black;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 62% 1fr;
+}
+
+.programs:nth-of-type(even) {
+    border-left: 1px solid black;
+}
+
+.programs > div:last-of-type {
+    border-left: 1px dotted black;
+    padding: 0 5px;
+}
+
+.programs h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.programs h3 {
+    text-decoration: underline;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.programs p, .programs span {
+    font-size: 13px;
+}
+
+.programs > div > div {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.programs > div:last-of-type > div p {
+    font-weight: bold;
+}
+
+.programs > div:first-of-type p {
+    line-height: 1.5;
+    display: flex;
+}
+
+.programs p span {
+    width: 7px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.programs > div:first-of-type > div {
+    display: flex !important;
+    margin-bottom: 2px;
+}

@@ -1,0 +1,214 @@
+.fa {
+    font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+    font-weight: var(--fa-style, 900)
+}
+
+.fa, .fa-brands, .fa-solid {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto
+}
+
+.fa-brands:before, .fa-solid:before {
+    content: var(--fa)
+}
+
+.fa-solid {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400
+}
+
+:host, :root {
+    --fa-style-family-brands: "Font Awesome 6 Brands";
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Pro"
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(webfonts/fa-brands-400.woff2) format("woff2"), url(webfonts/fa-brands-400.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(webfonts/fa-solid-900.woff2) format("woff2"), url(webfonts/fa-solid-900.ttf) format("truetype")
+}
+
+.fa-thumbs-up {
+    --fa: "\f164";
+    --fa--fa: "\f164\f164"
+}
+
+.fa-circle-exclamation {
+    --fa: "\f06a";
+    --fa--fa: "\f06a\f06a"
+}
+
+.fa-gears {
+    --fa: "\f085";
+    --fa--fa: "\f085\f085"
+}
+
+.fa-check {
+    --fa: "\f00c";
+    --fa--fa: "\f00c\f00c"
+}
+
+.fa-xmark {
+    --fa: "\f00d";
+    --fa--fa: "\f00d\f00d"
+}
+
+.fa-instagram {
+    --fa: "\f16d"
+}
+
+.fa-award {
+    --fa: "\f559";
+    --fa--fa: "\f559\f559"
+}
+
+.fa-bars {
+    --fa: "\f0c9";
+    --fa--fa: "\f0c9\f0c9"
+}
+
+.fa-book-open-cover {
+    --fa: "\e0c0";
+    --fa--fa: "\e0c0\e0c0"
+}
+
+.fa-calendar-days {
+    --fa: "\f073";
+    --fa--fa: "\f073\f073"
+}
+
+.fa-calendar-lines-pen {
+    --fa: "\e472";
+    --fa--fa: "\e472\e472"
+}
+
+.fa-chevron-right {
+    --fa: "\f054";
+    --fa--fa: "\f054\f054"
+}
+
+.fa-chevron-left {
+    --fa: "\f053";
+    --fa--fa: "\f053\f053"
+}
+
+.fa-cloud-arrow-up {
+    --fa: "\f0ee";
+    --fa--fa: "\f0ee\f0ee"
+}
+
+.fa-download {
+    --fa: "\f019";
+    --fa--fa: "\f019\f019"
+}
+
+.fa-ellipsis-vertical {
+    --fa: "\f142";
+    --fa--fa: "\f142\f142"
+}
+
+.fa-eye-slash {
+    --fa: "\f070";
+    --fa--fa: "\f070\f070"
+}
+
+.fa-eye {
+    --fa: "\f06e";
+    --fa--fa: "\f06e\f06e"
+}
+
+.fa-file-import {
+    --fa: "\f56f";
+    --fa--fa: "\f56f\f56f"
+}
+
+.fa-file-invoice {
+    --fa: "\f570";
+    --fa--fa: "\f570\f570"
+}
+
+.fa-gear {
+    --fa: "\f013";
+    --fa--fa: "\f013\f013"
+}
+
+.fa-house {
+    --fa: "\f015";
+    --fa--fa: "\f015\f015"
+}
+
+.fa-list-check {
+    --fa: "\f0ae";
+    --fa--fa: "\f0ae\f0ae"
+}
+
+.fa-lock {
+    --fa: "\f023";
+    --fa--fa: "\f023\f023"
+}
+
+.fa-magnifying-glass {
+    --fa: "\f002";
+    --fa--fa: "\f002\f002"
+}
+
+.fa-party-horn {
+    --fa: "\e31b";
+    --fa--fa: "\e31b\e31b"
+}
+
+.fa-plus {
+    --fa: "\2b";
+    --fa--fa: "\2b\2b"
+}
+
+.fa-print {
+    --fa: "\f02f";
+    --fa--fa: "\f02f\f02f"
+}
+
+.fa-save {
+    --fa: "\f0c7";
+    --fa--fa: "\f0c7\f0c7"
+}
+
+.fa-sync {
+    --fa: "\f021";
+    --fa--fa: "\f021\f021"
+}
+
+.fa-trash {
+    --fa: "\f1f8";
+    --fa--fa: "\f1f8\f1f8"
+}
+
+.fa-user {
+    --fa: "\f007";
+    --fa--fa: "\f007\f007"
+}
+
+.fa-up-right-from-square {
+    --fa: "\f35d";
+    --fa--fa: "\f35d\f35d"
+}
