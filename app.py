@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, flash, jsonify, session, make_response, abort
+from flask import Flask, render_template, request, redirect, jsonify, session, make_response, abort
 from flask_compress import Compress
 from flask_caching import Cache
-from flask_socketio import SocketIO, emit, join_room, leave_room
-import sqlite3, bcrypt, pyotp, qrcode, uuid, os
+from flask_socketio import SocketIO, emit, join_room
+import sqlite3, bcrypt, uuid, os
 from functools import wraps
 from typing import Literal
 from datetime import datetime, timedelta
