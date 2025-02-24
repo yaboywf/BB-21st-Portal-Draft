@@ -1,7 +1,5 @@
 from cryptography.fernet import Fernet
 
-# Generate initial key
-
 def encrypt(message: str) -> bytes:
     """
     Encrypt a message using the current key.
