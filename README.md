@@ -5,8 +5,22 @@
 ## What is it ?
 This website helps to facilitate administrative tasks such as creating 32A results, user management and awards tracking.
 
-## Installation and Configuration: 
-Methods to configure this website will not be discussed as it was created for a specific user base
+## Installation: 
+To run, please install the following:
+- python
+- flask
+- flask_compress
+- flask_caching
+- flask_socketio
+- sqlite3
+- bcrypt
+- uuid
+- os
+- functools
+- typing
+- datetime
+- flask_login
+- cryptography.fernet
 
 ## Languages Used:
 - Python 
