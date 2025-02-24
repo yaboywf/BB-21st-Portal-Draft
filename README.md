@@ -44,5 +44,3 @@ To run, please install the following:
 
 ## Author:
 - Website - [Dylan Yeo](https://yaboywf.github.io/portfolio/index.html)
-- Frontend Mentor - [@yaboywf](https://www.frontendmentor.io/profile/yaboywf)
-- Instagram - [@yaboywf](https://www.instagram.com/yaboywf/)
