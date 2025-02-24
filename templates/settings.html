@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BB 21st Portal">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+    <header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Dashboard">
+            <div></div>
+        </a>
+        <div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            {% if current_user.is_authenticated and current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.type.lower() == 'officer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.type.lower() == 'officer' or current_user.appt_holder == 'True' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+            {% else %}
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </div>
+            </a>
+
+            <a href="/annual_calendar">
+                <div>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <p>Annual Calendar</p>
+                </div>
+			<a href="/parade_notice">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notice</p>
+                </div>
+            </a>
+			<a href="/login">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Members Log In</p>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+	</header>
+
+    <main class="settings">
+        <h1>Settings</h1>
+
+        <div>
+            <div class="lockdown">
+                <h2>Lockdown</h2>
+    
+                <p>Current Lockdown Status: <b>{% if settings[0][1] == '1' %}Enabled{% else %}Disabled{% endif %}</b></p>
+    
+                <div>
+                    <button id="enable">Enable Lockdown</button>
+                    <button id="disable">Disable Lockdown</button>
+                </div>
+            </div>
+    
+            <div class="maintenance">
+                <h2>Maintenance</h2>
+    
+                <div>
+                    <input type="radio" name="maintenance" id="enable_m" value="1" {% if settings[1][1] == '1' %}checked{% endif %}>
+                    <label for="enable_m">Enabled</label>
+
+                    <input type="radio" name="maintenance" id="disable_m" value="0" {% if settings[1][1] == '0' %}checked{% endif %}>
+                    <label for="disable_m">Disabled</label>
+                </div>
+    
+                <div>
+                    <label for="time">maintenance Time</label>
+                    <input type="time" name="time" id="time" value="{{ settings[2][1] }}">
+                </div>
+    
+                <button id="save">Save</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <script src="{{ url_for('static', filename='js/settings.js') }}" defer></script>
+</body>
+</html>

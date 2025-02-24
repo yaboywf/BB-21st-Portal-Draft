@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BB 21st Portal">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21 Portal</title>
+</head>
+<body>
+    <header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Dashboard">
+            <div></div>
+        </a>
+        <div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            {% if current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.type.lower() == 'primer' %}
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+        </div>
+	</header>
+
+    <main class="awards_tracker_list">
+        <p class="route"><a href="/dashboard">Dashboard</a> > <a href="/awards_tracker/boys_awards">Awards Tracker</a> > <a href="/awards_tracker/boys_awards">Boys' Awards</a></p>
+
+        <section class="toggle_buttons">
+            <a href="/awards_tracker/boys_awards">
+                <button active="true">Boys' Awards</button>
+            </a>
+            <a href="/awards_tracker/award_requirements">
+                <button>Award Requirements</button>
+            </a>
+        </section>
+
+        <section>
+            <input type="radio" name="sort" id="elective">
+            <label for="elective">Electives</label>
+
+            <input type="radio" name="sort" id="ipa">
+            <label for="ipa">Intermediary Proficiency Award (IPA)</label>
+
+            <input type="radio" name="sort" id="spa">
+            <label for="spa">Senior Proficiency Award (SPA)</label>
+
+            <input type="radio" name="sort" id="founders">
+            <label for="founders">Founder's Award</label>
+        </section>
+
+        <section id="elective_list">
+            <h2>Electives</h2>
+
+            <div id="elective_table">
+                <div class="table_row table_head">
+                    <p>Boy</p>
+                    <p badge-id="9">Adventure</p>
+                    <p badge-id="10">Drill</p>
+                    <p badge-id="11" class="gs2">Arts & Crafts</p>
+                    <p badge-id="12" class="gs2">Athletics</p>
+                    <p badge-id="13" class="gs2">Drummer</p>
+                    <p badge-id="14" class="gs2">First Aid</p>
+                    <p badge-id="15" class="gs2">Hobbies</p>
+                    <p badge-id="16" class="gs2">Kayaking</p>
+                    <p badge-id="17" class="gs2">Musketry</p>
+                    <p badge-id="18" class="gs2">Piper</p>
+                    <p badge-id="19" class="gs2">Sailing</p>
+                    <p badge-id="20" class="gs2">Sportman</p>
+                    <p badge-id="21" class="gs2">Swimming</p>
+                </div>
+
+                <div class="table_row table_subhead table_head">
+                    <p level-id="2">Advanced</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ipa_list">
+            <h2>Intermediary Proficiency Award (IPA)</h2>
+
+            <div id="ipa_table">
+                <div class="table_row table_head">
+                    <p>Boy</p>
+                    <p>1 Elective Point</p>
+                    <p badge-id="1">Target</p>
+                    <p badge-id="9">Adventure</p>
+                    <p badge-id="10">Drill</p>
+                    <p badge-id="6">Community Spiritness</p>
+                    <p badge-id="8">Global Awareness</p>
+                    <p badge-id="7">Leadership</p>
+                </div>
+
+                <div class="table_row table_subhead table_head">
+                    <p level-id="1">Basic</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Basic</p>
+                    <p level-id="1">Basic</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="spa_list">
+            <h2>Senior Proficiency Award (SPA)</h2>
+
+            <div id="spa_table">
+                <div class="table_row table_head">
+                    <p>Boy</p>
+                    <p>Intermediary Proficiency Award (IPA)</p>
+                    <p>4 Elective Point</p>
+                    <p>Total Defence</p>
+                    <p badge-id="8">Global Awareness</p>
+                    <p badge-id="7">Leadership</p>
+                </div>
+
+                <div class="table_row table_subhead table_head">
+                    <p level-id="1">Silver</p>
+                    <p level-id="2">Advanced</p>
+                    <p level-id="1">Advanced</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="founders_list">
+            <h2>Founder's Award</h2>
+
+            <div id="founders_table">
+                <div class="table_row table_head">
+                    <p>Boy</p>
+                    <p>Senior Proficiency Award (SPA)</p>
+                    <p>6 Elective Point</p>
+                    <p>Christian Education</p>
+                    <p>Community Spiritness</p>
+                    <p>Global Awareness</p>
+                    <p badge-id="7">Leadership</p>
+                </div>
+
+                <div class="table_row table_subhead table_head">
+                    <p>Master</p>
+                    <p>Master</p>
+                    <p>Master</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <div class="error_container" id="error_container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" defer></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/awards_tracker_list.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/logged_in.js') }}" defer></script>
+</body>
+</html>

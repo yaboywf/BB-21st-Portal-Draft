@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="BB 21st Portal">
+	<link rel="icon" type="image/svg+xml" href="static/images/BB logo.webp" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+	<header sticky="false" type="public">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/" aria-label="Home">
+            <div></div>
+        </a>
+		<div>
+			<a href="/annual_calendar" active="true">Annual Calendar</a>
+			<a href="/parade_notice">Parade Notice</a>
+			<a href="/login">Members Log In</a>
+		</div>
+	</header>
+
+    <main class="calendar">
+		<div>
+			<h2>Annual Calendar</h2>
+
+			<div>
+				<a href="/static/pdf/annual_calendar.pdf" download aria-label="Download">
+					<i class="fa-solid fa-download"></i>
+				</a>
+				<a href="/static/pdf/annual_calendar.pdf" target="_blank" aria-label="Open in new tab">
+					<i class="fa-solid fa-up-right-from-square"></i>
+				</a>
+			</div>
+		</div>
+        <iframe id="calendar" src="/static/pdf/annual_calendar.pdf#toolbar=0&#zoom=page-width" frameborder="0" title="Annual calendar PDF"></iframe>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="static/images/gm.webp" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="static/images/church.png" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" defer></script>
+	<script src="static/js/common.js" defer></script>
+	<script src="static/js/calendar.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+    <header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Dashboard">
+            <div></div>
+        </a>
+		<div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            {% if current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.type.lower() == 'primer' %}
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+		</div>
+	</header>
+    
+    <main class="parade_notices">
+        <p class="route"><a href="/dashboard">Dashboard</a> > <a href="/parade_notice_and_attendance">Parade Notices and Attendance</a></p>
+        
+        <section>
+            <div class="awards_requirements_sidebar parade_notices_sidebar">
+                <div>
+                    <div>
+                        <div>
+                            <i class="fa-solid fa-chevron-left" id="prev_year"></i>
+                            <p id="year">2025</p>
+                            <i class="fa-solid fa-chevron-right" id="next_year"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-plus" id="create_button"></i>
+                        </div>
+                    </div>
+
+                    <div id="parade_notice_list"></div>
+                </div>
+            </div>
+
+            <div>
+                <h1 id="attendance_heading">Attendance</h1>
+
+                <div class="parade_attendance">
+                    <div>
+                        <h2>Sec 1 Platoon</h2>
+                        <div id="sec1_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Sec 2 Platoon</h2>
+                        <div id="sec2_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Sec 3 Platoon</h2>
+                        <div id="sec3_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Sec 4 / 5 Platoon</h2>
+                        <div id="sec4_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Primers</h2>
+                        <div id="primer_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Officers / VAL</h2>
+                        <div id="officer_attendance">
+                            <p>Total Present</p>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Overall</h2>
+                        <div>
+                            <p>Boy(s) Strength</p>
+                            <span id="total_boy">0 / 0</span>
+                            <p>Primer(s) Strength</p>
+                            <span id="total_primer">0 / 0</span>
+                            <p>Officer(s) Strength</p>
+                            <span id="total_officer">0 / 0</span>
+                            <p>Company Strength</p>
+                            <span id="total_coy">0 / 0</span>
+                        </div>
+                    </div>
+
+                    <h1>Parade Notice</h1>
+                </div>
+
+                <div>
+                    <h2>General</h2>
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="date" required>
+                    <label for="venue">Venue:</label>
+                    <input type="text" name="venue" id="venue" value="School, GMSS" placeholder="Enter Venue" autocomplete="street-address" required>
+                    <label for="reporting">Reporting Time</label>
+                    <input type="time" name="reporting" id="reporting" value="08:30" required>
+                    <label for="dismissal">Dismissal Time</label>
+                    <input type="time" name="dismissal" id="dismissal" value="12:30" required>
+                </div>
+    
+                <div>
+                    <h2>Parade Appointments</h2>
+                    <label for="DT">Duty Teacher:</label>
+                    <input type="text" name="DT" id="DT" placeholder="Enter Duty Teacher" list="officers" autocomplete="off" required>
+                    <label for="DO">Duty Officer:</label>
+                    <input type="text" name="DO" id="DO" placeholder="Enter Duty Officer" list="officers" autocomplete="off" required>
+                    <label for="CSM">CSM:</label>
+                    <input type="text" name="CSM" id="CSM" disabled placeholder="Set in Appt Holders Page (Officers)" required>
+                    <label for="COS">COS:</label>
+                    <input type="text" name="COS" id="COS" placeholder="Enter Company Orderly Sergeant" list="boys" autocomplete="off" required>
+                    <label for="FB">Flag Bearer:</label>
+                    <input type="text" name="FB" id="FB" placeholder="Enter Flag Bearer" list="boys" autocomplete="off" required>
+                    <label for="CE">CE:</label>
+                    <input type="text" name="CE" id="CE" disabled placeholder="Set in Appt Holders Page (Officers)" required>
+                </div>
+    
+                <div id="company_announcement" class="ca">
+                    <h2>Company Announcements</h2>
+                    <ol id="announcement_container"></ol>
+                    <button id="add_announcement"><i class="fa-solid fa-plus"></i>Add Announcement</button>
+                </div>
+    
+                <h1>Secondary 1 Platoon</h1>
+
+                <div class="parade_platoon">
+                    <h2>Sec 1 Platoon Attire</h2>
+                    <label for="sec1_attire">Attire: </label>
+                    <input type="text" id="sec1_attire" list="uniforms" placeholder="Enter Sec 1 Platoon's Attire">
+                </div>
+
+                <div class="parade_platoon" id="sec1_programs">
+                    <h2>Sec 1 Platoon Programs</h2>
+                    <button><i class="fa-solid fa-plus"></i>Add Program</button>
+                </div>
+
+                <div class="platoon_announcement sec1_announcements" id="company_announcement">
+                    <h2>Sec 1 Platoon Announcements</h2>
+                    <ol id="announcement_container"></ol>
+                    <button id="add_announcement"><i class="fa-solid fa-plus"></i>Add Announcement</button>
+                </div>
+
+                <h1>Secondary 2 Platoon</h1>
+
+                <div class="parade_platoon">
+                    <h2>Sec 2 Platoon Attire</h2>
+                    <label for="sec2_attire">Attire: </label>
+                    <input type="text" id="sec2_attire" list="uniforms" placeholder="Enter Sec 2 Platoon's Attire">
+                </div>
+                
+                <div class="parade_platoon" id="sec2_programs">
+                    <h2>Sec 2 Platoon Programs</h2>
+                    <button><i class="fa-solid fa-plus"></i>Add Program</button>
+                </div>
+
+                <div class="platoon_announcement sec2_announcements" id="company_announcement">
+                    <h2>Sec 2 Platoon Announcements</h2>
+                    <ol id="announcement_container"></ol>
+                    <button id="add_announcement"><i class="fa-solid fa-plus"></i>Add Announcement</button>
+                </div>
+
+                <h1>Secondary 3 Platoon</h1>
+
+                <div class="parade_platoon">
+                    <h2>Sec 3 Platoon Attire</h2>
+                    <label for="sec3_attire">Attire: </label>
+                    <input type="text" id="sec3_attire" list="uniforms" placeholder="Enter Sec 3 Platoon's Attire">
+                </div>
+    
+                <div class="parade_platoon" id="sec3_programs">
+                    <h2>Sec 3 Platoon Programs</h2>
+                    <button><i class="fa-solid fa-plus"></i>Add Program</button>
+                </div>
+
+                <div class="platoon_announcement sec3_announcements" id="company_announcement">
+                    <h2>Sec 3 Platoon Announcements</h2>
+                    <ol id="announcement_container"></ol>
+                    <button id="add_announcement"><i class="fa-solid fa-plus"></i>Add Announcement</button>
+                </div>
+
+                <h1>Secondary 4/5 Platoon</h1>
+
+                <div class="parade_platoon">
+                    <h2>Sec 4/5 Platoon Attire</h2>
+                    <label for="sec4_attire">Attire: </label>
+                    <input type="text" id="sec4_attire" list="uniforms" placeholder="Enter Sec 4/5 Platoon's Attire">
+                </div>
+    
+                <div class="parade_platoon" id="sec4_programs">
+                    <h2>Sec 4/5 Platoon Programs</h2>
+                    <button><i class="fa-solid fa-plus"></i>Add Program</button>
+                </div>
+
+                <div class="platoon_announcement sec4_announcements" id="company_announcement">
+                    <h2>Sec 4 / 5 Platoon Announcements</h2>
+                    <ol id="announcement_container"></ol>
+                    <button id="add_announcement"><i class="fa-solid fa-plus"></i>Add Announcement</button>
+                </div>
+
+                <h1>Others</h1>
+
+                <div class="parade_platoon">
+                    <h2>Description</h2>
+                    <textarea placeholder="Enter Description" id="description"></textarea>
+                </div>
+        
+                <div id="options">
+                    <button id="create">Create</button>
+                    <button id="save">Save Changes</button>
+                    <button class="gototop" id="gototop">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <datalist id="uniforms">
+        <option value="Refer To Announcements"></option>
+        <option value="School PE"></option>
+        <option value="PT Kit"></option>
+        <option value="Fatigue Dress"></option>
+        <option value="Musketry Kit"></option>
+        <option value="Day Dress"></option>
+        <option value="Ceremonial Dress"></option>
+    </datalist>
+
+    <datalist id="officers"></datalist>
+    <datalist id="boys"></datalist>
+
+    <div id="user" account-type="{{ current_user.type }}"></div>
+    <div class="error_container" id="error_container"></div>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" defer></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/logged_in.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/parade_notices.js') }}" defer></script>
+</body>
+</html>

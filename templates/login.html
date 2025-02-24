@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="BB 21st Portal">
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/slide 2.webp') }}" as="image">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+	<header>
+		<i class="fa-solid fa-bars"></i>
+		<a href="/" aria-label="Home">
+            <div></div>
+        </a>
+		<div>
+			<a href="/annual_calendar">Annual Calendar</a>
+			<a href="/parade_notice">Parade Notice</a>
+			<a href="/login" active="true">Members Log In</a>
+		</div>
+	</header>
+
+    <main class="login">
+        <form action="/login/authenticate" method="POST" novalidate>
+            <label for="username">Username:</label>
+            <div>
+                <input type="text" id="username" name="username" autocomplete="off" required placeholder="Enter your username">
+            </div>
+            <p><i class="fa-solid fa-circle-exclamation"></i> Please input your username</p>
+            <label for="password">Password:</label>
+            <div>
+                <input type="password" id="password" name="password" required placeholder="Enter your password" autocomplete="current-password">
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
+            </div>
+            <p><i class="fa-solid fa-circle-exclamation"></i> Please input your password</p>
+			<p><i class="fa-solid fa-circle-exclamation"></i></p>
+			<button type="submit">Log In</button>
+        </form>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+	<script src="{{ url_for('static', filename='js/common.js') }}" defer></script>
+</body>
+</html>

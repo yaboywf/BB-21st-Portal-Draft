@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BB 21st Portal">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<link rel="preload" href="{{ url_for('static', filename='images/403.webp') }}" as="image">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+    <header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Return to previous page">
+            <div></div>
+        </a>
+	</header>
+
+    <main class="forbidden">
+        <img src="{{ url_for('static', filename='images/403.webp') }}" alt="403" width="200px" height="200px">
+
+        <h2>Access Denied</h2>
+
+        <p>Looks like you forgot to shine your boots and iron your uniform.<br>Come back when you're inspection-ready!</p>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+</body>
+</html>

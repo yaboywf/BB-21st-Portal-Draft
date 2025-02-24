@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BB 21st Portal">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21 Portal</title>
+</head>
+<body>
+    <header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Dashboard">
+            <div></div>
+        </a>
+        <div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            {% if current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.type.lower() == 'primer' %}
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+        </div>
+	</header>
+
+    <main class="dashboard">
+        <h2>Welcome, {% if current_user.rank == "NIL" %}{{ current_user.honorifics|capitalize }}{% else %}{{ current_user.rank }}{% endif %} {{ current_user.username }}</h2>
+
+        <section>
+            {% if current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.type.lower() == 'primer' %}
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="pending_tasks">
+            <h3><i class="fa-solid fa-list-check"></i> Pending Tasks</h3>
+            <div>
+                <i class="fa-solid fa-party-horn" id="no_pending_tasks"></i>
+                <p id="no_pending_tasks_text">Yay! You have no pending tasks</p>
+                <ol>
+                    {% for parade in roles %}
+                    {% if parade["cos_id"] == current_user.id %}
+                    <li>Company Orderly Sergeant (COS) Duty for {{ parade["parade_date"] }} Parade</li>
+                    {% endif %}
+                    {% if parade["flag_bearer"] == current_user.id %}
+                    <li>Flag Bearer Duty for {{ parade["parade_date"] }} Parade</li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% for parade, users in attendance.items() %}
+                    <li>Pending attendance update for these boys for the {{ parade }} parade. <a href="/parade_notice_and_attendance">Click here to update</a>:</li>
+                    <ul>
+                        {% for user in users %}
+                        {% if user.attendance_appearance.lower() == "yes" %}
+                        <li>{{ user.rank }} {{ user.user_name }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+
+                    {% if parade_notice %}
+                    <li>There is an upcoming parade on {{ parade_notice[0] }}. Click <a href="/parade_notice">here to view the parade notice</a>.</li>
+                    {% endif %}
+
+                    {% if parade_notice_exist == 0 and (current_user.type.lower() == "officer" or (current_user.get("appt_holder") == 1)) %}
+                    <li>The parade notice for {{ nearest_sat }} have not been created</li>
+                    {% endif %}
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="static/images/gm.webp" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="static/images/church.png" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <div id="new_user">
+        <div>
+            <img src="{{ url_for('static', filename='images/hello.png') }}" alt="Hello" width="200px" height="200px">
+
+            <p>Welcome, {% if current_user.rank == "NIL" %}{{ current_user.honorifics }}{% else %}{{ current_user.rank }}{% endif %} {{ current_user.username }} to BB 21st Portal</p>
+
+            <p>We recommend you to secure your account by resetting your login password.</p>
+
+            <div>
+                <a href="/reset_login_information">
+                    <button>Okay</button>
+                </a>
+                <button id="later">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="error_container" id="error_container"></div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/logged_in.js') }}"></script>
+</body>
+</html>

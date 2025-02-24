@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BB 21st Portal">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/BB logo.webp') }}" />
+	<link rel="preload" href="{{ url_for('static', filename='style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="{{ url_for('static', filename='images/coy logo.webp') }}" as="image">
+	<title>BB 21st Portal</title>
+</head>
+<body>
+	<header sticky="false" type="home">
+		<i class="fa-solid fa-bars"></i>
+		<a href="/dashboard" aria-label="Dashboard">
+            <div></div>
+        </a>
+		<div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            {% if current_user.type.lower() == 'boy' %}
+            <a href="/awards">
+                <div>
+                    <i class="fa-solid fa-award"></i>
+                    <p>My Awards</p>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+
+            <a href="/user_management/current_users">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>User Management</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.type.lower() == 'primer' %}
+
+            <a href="/awards_tracker">
+                <div>
+                    <img src="{{ url_for('static', filename='images/awards_tracker.svg') }}" alt="">
+                    <p>Awards Tracker</p>
+                </div>
+            </a>
+
+            <a href="/results_generation">
+                <div>
+                    <i class="fa-solid fa-file-import"></i>
+                    <p>Results Generation</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' or current_user.appt_holder or current_user.type.lower() == 'primer' %}
+            
+            <a href="/parade_notice_and_attendance">
+                <div>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <p>Parade Notices & Attendance</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.type.lower() == 'officer' %}
+
+            <a href="/annual_calendar_updater">
+                <div>
+                    <i class="fa-solid fa-calendar-lines-pen"></i>
+                    <p>Update Annual Calendar</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            {% if current_user.id == 1 %}
+
+            <a href="/settings?user=1&type=admin" title="Ensure all security measures are added before entering">
+                <div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
+            </a>
+
+            {% endif %}
+
+            <a href="/user_attendance">
+                <div>
+                    <img src="{{ url_for('static', filename='images/user_management.svg') }}" alt="">
+                    <p>My Attendance</p>
+                </div>
+            </a>
+
+            <a href="/profile">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <p>My Profile</p>
+                </div>
+            </a>
+
+            <a href="/reset_login_information">
+                <div>
+                    <i class="fa-solid fa-sync"></i>
+                    <p>Reset Login Information</p>
+                </div>
+            </a>
+
+            <a href="/logout">
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Logout</p>
+                </div>
+            </a>
+		</div>
+	</header>
+
+    <main class="user_management">
+        <p class="route"><a href="/dashboard">Dashboard</a> > <a href="/user_management/current_users">User Management</a> > <a href="/user_management/graduated_boys">Graduated Boys</a></p>
+
+        <section class="toggle_buttons">
+            <a href="/user_management/current_users">
+                <button>Current Users</button>
+            </a>
+
+            {% if current_user.type.lower() != 'boy' %}
+            <a href="/user_management/graduated_boys">
+                <button active="true">Graduated Boys</button>
+            </a>
+            <a href="/user_management/appointment_holders">
+                <button>Appointment Holders</button>
+            </a>
+            <a href="/user_management/nco_council">
+                <button>NCO Council</button>
+            </a>
+            {% endif %}
+        </section>
+
+        <section class="user_management_current graduated">
+            <div>
+                <div>
+                    <label for="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Search
+                    </label>
+                    <input type="search" placeholder="Search graduated boy" id="search" autocomplete="off">
+                </div>
+
+                <div id="users_list"></div>
+            </div>
+
+            <div>
+                <h2>Please select a user</h2>
+                <form id="form">
+                    <label for="user_name">User Name:</label>
+                    <input type="text" id="user_name" name="user_name" autocomplete="name" required disabled>
+                    <label for="abb_name">Abbreviated Name:</label>
+                    <input type="text" id="abb_name" name="abb_name" autocomplete="name" disabled>
+                    <label for="nominal_roll">Appear in attendance</label>
+                    <select name="nominal_roll" id="nominal_roll" required disabled>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <label for="account_type">Account Type:</label>
+                    <select name="type" id="account_type" required disabled>
+                        <option value="boy" selected>Boy</option>
+                    </select>
+                    
+                    <label for="rank">Rank:</label>
+                    <select name="rank" id="rank" disabled>
+                        <option value="REC">Recruit (REC)</option>
+                        <option value="LCP">Lance Corporal (LCP)</option>
+                        <option value="CPL">Corporal (CPL)</option>
+                        <option value="SGT">Sergeant (SGT)</option>
+                        <option value="SSG">Staff Sergeant (SSG)</option>
+                        <option value="WO">Warrant Officer (WO)</option>
+                    </select>
+                    <label for="level">Secondary:</label>
+                    <select name="level" id="level" disabled>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <label for="member_id">Member ID</label>
+                    <input type="text" name="member_id" id="member_id" disabled>
+
+                    <label for="sec1_class">Secondary 1 Class</label>
+                    <input type="text" name="sec1_class" id="sec1_class" disabled>
+
+                    <label for="sec2_class">Secondary 2 Class</label>
+                    <input type="text" name="sec2_class" id="sec2_class" disabled>
+
+                    <label for="sec3_class">Secondary 3 Class</label>
+                    <input type="text" name="sec3_class" id="sec3_class" disabled>
+
+                    <label for="sec4_class">Secondary 4 Class</label>
+                    <input type="text" name="sec4_class" id="sec4_class" disabled>
+
+                    <label for="sec5_class">Secondary 5 Class</label>
+                    <input type="text" name="sec5_class" id="sec5_class" disabled>
+
+                    <label for="sec1_rank">End of Secondary 1 Rank</label>
+                    <select name="sec1_rank" id="sec1_rank" disabled>
+                        <option value="" selected>NIL</option>
+                        <option value="REC">Recruit (REC)</option>
+                        <option value="LCP">Lance Corporal (LCP)</option>
+                        <option value="CPL">Corporal (CPL)</option>
+                        <option value="SGT">Sergeant (SGT)</option>
+                        <option value="SSG">Staff Sergeant (SSG)</option>
+                        <option value="WO">Warrant Officer (WO)</option>
+                    </select>
+
+                    <label for="sec2_rank">End of Secondary 2 Rank</label>
+                    <select name="sec2_rank" id="sec2_rank" disabled>
+                        <option value="" selected>NIL</option>
+                        <option value="REC">Recruit (REC)</option>
+                        <option value="LCP">Lance Corporal (LCP)</option>
+                        <option value="CPL">Corporal (CPL)</option>
+                        <option value="SGT">Sergeant (SGT)</option>
+                        <option value="SSG">Staff Sergeant (SSG)</option>
+                        <option value="WO">Warrant Officer (WO)</option>
+                    </select>
+
+                    <label for="sec3_rank">End of Secondary 3 Rank</label>
+                    <select name="sec3_rank" id="sec3_rank" disabled>
+                        <option value="" selected>NIL</option>
+                        <option value="REC">Recruit (REC)</option>
+                        <option value="LCP">Lance Corporal (LCP)</option>
+                        <option value="CPL">Corporal (CPL)</option>
+                        <option value="SGT">Sergeant (SGT)</option>
+                        <option value="SSG">Staff Sergeant (SSG)</option>
+                        <option value="WO">Warrant Officer (WO)</option>
+                    </select>
+
+                    <label for="sec4_rank">End of Secondary 4 Rank</label>
+                    <select name="sec4_rank" id="sec4_rank" disabled>
+                        <option value="" selected>NIL</option>
+                        <option value="REC">Recruit (REC)</option>
+                        <option value="LCP">Lance Corporal (LCP)</option>
+                        <option value="CPL">Corporal (CPL)</option>
+                        <option value="SGT">Sergeant (SGT)</option>
+                        <option value="SSG">Staff Sergeant (SSG)</option>
+                        <option value="WO">Warrant Officer (WO)</option>
+                    </select>
+
+                    <label for="graduated">Graduated</label>
+                    <select name="graduated" id="graduated">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                    </select>
+
+                    <button type="button" id="save">Save</button>
+                    <button type="button" id="delete">Delete</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<div>
+			<div>
+				<p>Social Media:</p>
+				<a href="https://www.instagram.com/bb21coy/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+			<div>
+				<p>Affiliated With:</p>
+				<div>
+					<img src="{{ url_for('static', filename='images/gm.webp') }}" width="60px" height="60px" alt="Geylang Methodist School (Secondary)" />
+					<img src="{{ url_for('static', filename='images/church.png') }}" width="60px" height="60px" alt="Christalite Methodist Chapel"/>
+				</div>
+			</div>
+			<div>
+				<p>Associated Websites:</p>
+				<div>
+					<a href="https://www.bb.org.sg/" target="_blank">BB HQ Website</a>
+					<a href="https://members.bb.org.sg/cos/o.x?c=/ca3_ca3bbportal/user&func=login" target="_blank">BB Members Portal</a>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>Icons by  <a href="https://fontawesome.com/" title="Font Awesome" target="_blank">Font Awesome</a></p>
+			<p>Website designed and developed by: Dylan Yeo</p>
+		</div>
+	</footer>
+
+    <div class="error_container" id="error_container"></div>
+
+    <div id="new_user" class="confirmation">
+        <div>
+            <img src="{{ url_for('static', filename='images/confirm.webp') }}" alt="Confirmation Image" width="200px" height="200px">
+        
+            <h2>Are you sure?</h2>
+
+            <p>This action cannot be undone</p>
+
+            <div>
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" defer></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/logged_in.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/graduated.js') }}" defer></script>
+</body>
+</html>
