@@ -17,6 +17,17 @@ Methods to configure this website will not be discussed as it was created for a 
 - Javascript
 - SQLite
 
+## Sample Usage:
+- Member's Account:
+  - Username: Dylan Boy
+  - Password: 1234
+- Primer's Account:
+  - Username: Dylan Primer
+  - Password: 1234
+- Officer's Account:
+  - Username: Dylan Officer
+  - Password: 1234 
+
 ## Author:
 - Website - [Dylan Yeo](https://yaboywf.github.io/portfolio/index.html)
 - Frontend Mentor - [@yaboywf](https://www.frontendmentor.io/profile/yaboywf)
